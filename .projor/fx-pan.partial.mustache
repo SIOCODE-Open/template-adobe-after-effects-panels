@@ -1,0 +1,42 @@
+// Pan effect
+// Props:
+// - offset: offset in pixels (array of two floats)
+// Creates two keyframes in all selected layers.
+// The first keyframe at the inPoint, with the position set to current pos
+// The second keyframe at the outPoint, with the position set to current pos + offset
+
+// Check props
+if (!props.offset) {
+    _alert("Error | offset is not defined in props, you must define offset.");
+    return;
+}
+
+if (props.offset.length !== 2) {
+    _alert("Error | offset must be an array of two floats.");
+    return;
+}
+
+// Get selected layers
+var selectedLayers = comp.selectedLayers;
+
+if (!selectedLayers || selectedLayers.length === 0) {
+    _alert("Error | please select at least one layer.");
+    return;
+}
+
+// For each selected layer
+for (var i = 0; i < selectedLayers.length; i++) {
+    var layer = selectedLayers[i];
+
+    var currentPos = [
+        layer.transform.position.value[0],
+        layer.transform.position.value[1]
+    ];
+
+    // Create keyframes
+    var key1 = layer.transform.position.setValueAtTime(layer.inPoint, currentPos);
+    var key2 = layer.transform.position.setValueAtTime(layer.outPoint, [
+        currentPos[0] + props.offset[0],
+        currentPos[1] + props.offset[1]
+    ]);
+}

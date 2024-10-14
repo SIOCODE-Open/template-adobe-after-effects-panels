@@ -1,0 +1,9 @@
+id: ButtonPanelButton
+name: Button Panel Button
+description: A button on a button panel
+fields:
+  - name: effects
+    type: attachment
+    multiple: true
+    references: ButtonEffect
+    description: The effects to apply when the button is clicked

@@ -1,0 +1,11 @@
+id: ButtonEffect
+name: Button Effect
+description: An effect that can be applied to a button
+fields:
+  - name: type
+    type: enum
+    enum: [fadein, fadeout, walk, movein, moveout, scalein, scaleout, rotatein, rotateout, pan, infzoom, spin, staircase]
+    description: The effect to apply when the button is clicked
+  - name: props
+    type: dict
+    description: The properties of the effect

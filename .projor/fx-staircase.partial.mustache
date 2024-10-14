@@ -1,0 +1,37 @@
+// Staircase Effect
+// Props:
+// - sep: separation of layer inPoints in seconds (float)
+// This script will create a "staircase" from the selected layers in the timeline.
+// First, it sorts the layers by index.
+// Then, it sets the outPoint of all layers to the first selected layer's outPoint.
+// Then, starting from the second layer, it sets the inPoint to the previous layer's inPoint + sep.
+
+// Check props
+if (!props.sep) {
+    _alert("Error | sep is not defined in props, you must define sep.");
+    return;
+}
+
+// Get selected layers
+var selectedLayers = comp.selectedLayers;
+
+if (!selectedLayers || selectedLayers.length === 0) {
+    _alert("Error | please select at least one layer.");
+    return;
+}
+
+// Sort layers by index
+selectedLayers.sort(function(a, b) {
+    return b.index - a.index;
+});
+
+// Set outPoint of all layers to the first selected layer's outPoint
+var firstOutPoint = selectedLayers[0].outPoint;
+for (var i = 0; i < selectedLayers.length; i++) {
+    selectedLayers[i].outPoint = firstOutPoint;
+}
+
+// Set inPoint of all layers starting from the second layer
+for (var i = 1; i < selectedLayers.length; i++) {
+    selectedLayers[i].inPoint = selectedLayers[i - 1].inPoint + props.sep;
+}

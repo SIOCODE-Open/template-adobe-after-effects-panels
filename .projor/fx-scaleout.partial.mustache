@@ -1,0 +1,48 @@
+// Scale Out effect
+// Props:
+// - t: duration in seconds (float)
+// - offset: offset in percent (array of two floats)
+// Creates two keyframes in all selected layers.
+// The first keyframe at the outPoint - t, with the scale set to current scale
+// The second keyframe at the outPoint, with the scale set to current scale + offset
+
+// Check props
+if (!props.t) {
+    _alert("Error | t is not defined in props, you must define t.");
+    return;
+}
+
+if (!props.offset) {
+    _alert("Error | offset is not defined in props, you must define offset.");
+    return;
+}
+
+if (props.offset.length !== 2) {
+    _alert("Error | offset must be an array of two floats.");
+    return;
+}
+
+// Get selected layers
+var selectedLayers = comp.selectedLayers;
+
+if (!selectedLayers || selectedLayers.length === 0) {
+    _alert("Error | please select at least one layer.");
+    return;
+}
+
+// For each selected layer
+for (var i = 0; i < selectedLayers.length; i++) {
+    var layer = selectedLayers[i];
+
+    var currentScale = [
+        layer.transform.scale.value[0],
+        layer.transform.scale.value[1]
+    ];
+
+    // Create keyframes
+    var key1 = layer.transform.scale.setValueAtTime(layer.outPoint - props.t, currentScale);
+    var key2 = layer.transform.scale.setValueAtTime(layer.outPoint, [
+        currentScale[0] + props.offset[0],
+        currentScale[1] + props.offset[1]
+    ]);
+}

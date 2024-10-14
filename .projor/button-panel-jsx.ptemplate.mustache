@@ -1,0 +1,48 @@
+{
+    "forEach": "buttonpanels",
+    "filename": "panels/{{kebabCase name}}.jsx",
+    "formatUsing": "typescript"
+}
+---
+(function {{camelCase name}}(thisObj) {
+
+    {{#each groups}}
+    {{> comp-group group=this parentName=../name }}
+    {{/each}}
+    {{#each buttons}}
+    {{> comp-button button=this parentName=../name }}
+    {{/each}}
+
+    function buildUi(thisObj) {
+        var w = (thisObj instanceof Panel) ? thisObj : new Window("palette", "{{description}}");
+        {{#each groups}}
+        w.group{{pascalCase name}}Panel = w.add("panel", undefined, "{{{description}}}");
+        w.group{{pascalCase name}} = w.group{{pascalCase name}}Panel.add("group", undefined, {
+            orientation: "row"
+        });
+        {{#each buttons}}
+        w.group{{pascalCase ../name}}.button{{pascalCase name}} = w.group{{pascalCase ../name}}.add("button", undefined, "{{{description}}}");
+        w.group{{pascalCase ../name}}.button{{pascalCase name}}.onClick = function() {
+            on{{pascalCase name}}();
+        };
+        {{/each}}
+        {{/each}}
+        {{#each buttons}}
+        w.button{{pascalCase name}} = w.add("button", undefined, "{{{description}}}");
+        w.button{{pascalCase name}}.onClick = function() {
+            on{{pascalCase name}}();
+        };
+        {{/each}}
+        w.layout.layout(true);
+        return w;
+    };
+
+    // Show the Panel
+    var w = buildUi(thisObj);
+    if (w.toString() == "[object Panel]") {
+        w;
+    } else {
+        w.show();
+    }
+
+})(this);

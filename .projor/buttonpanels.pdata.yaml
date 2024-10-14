@@ -1,0 +1,961 @@
+id: buttonpanels
+name: Button Panels
+description: The generated button panels
+schema: ButtonPanel
+objects:
+  - name: quick_fade
+    description: Quick Fade
+    groups:
+      - name: fadeins
+        description: Fade In Effects
+        buttons:
+          - name: half_second_fadein
+            description: 0.5s
+            effects:
+              - name: fadein
+                description: 0.5s fade in
+                type: fadein
+                props:
+                  t: "0.5"
+          - name: one_second_fadein
+            description: 1s
+            effects:
+              - name: fadein
+                description: 1s fade in
+                type: fadein
+                props:
+                  t: "1.0"
+          - name: two_second_fadein
+            description: 2s
+            effects:
+              - name: fadein
+                description: 2s fade in
+                type: fadein
+                props:
+                  t: "2.0"
+      - name: fadeouts
+        description: Fade Out Effects
+        buttons:
+          - name: half_second_fadeout
+            description: 0.5s
+            effects:
+              - name: fadeout
+                description: 0.5s fade out
+                type: fadeout
+                props:
+                  t: "0.5"
+          - name: one_second_fadeout
+            description: 1s
+            effects:
+              - name: fadeout
+                description: 1s fade out
+                type: fadeout
+                props:
+                  t: "1.0"
+          - name: two_second_fadeout
+            description: 2s
+            effects:
+              - name: fadeout
+                description: 2s fade out
+                type: fadeout
+                props:
+                  t: "2.0"
+
+  - name: quick_scale
+    description: Quick Scale
+    groups:
+      - name: scaleins
+        description: Scale In Effects
+        buttons:
+          - name: in_half_second_10_percent
+            description: 0.5s 10%
+            effects:
+              - name: scalein
+                description: 0.5s 10% scale in
+                type: scalein
+                props:
+                  t: "0.5"
+                  offset: "[10, 10]"
+          - name: in_one_second_10_percent
+            description: 1s 10%
+            effects:
+              - name: scalein
+                description: 1s 10% scale in
+                type: scalein
+                props:
+                  t: "1.0"
+                  offset: "[10, 10]"
+          - name: in_half_second_25_percent
+            description: 0.5s 25%
+            effects:
+              - name: scalein
+                description: 0.5s 25% scale in
+                type: scalein
+                props:
+                  t: "0.5"
+                  offset: "[25, 25]"
+          - name: in_one_second_25_percent
+            description: 1s 25%
+            effects:
+              - name: scalein
+                description: 1s 25% scale in
+                type: scalein
+                props:
+                  t: "1.0"
+                  offset: "[25, 25]"
+      - name: scaleouts
+        description: Scale Out Effects
+        buttons:
+          - name: out_half_second_10_percent
+            description: 0.5s 10%
+            effects:
+              - name: scaleout
+                description: 0.5s 10% scale out
+                type: scaleout
+                props:
+                  t: "0.5"
+                  offset: "[10, 10]"
+          - name: out_one_second_10_percent
+            description: 1s 10%
+            effects:
+              - name: scaleout
+                description: 1s 10% scale out
+                type: scaleout
+                props:
+                  t: "1.0"
+                  offset: "[10, 10]"
+          - name: out_half_second_25_percent
+            description: 0.5s 25%
+            effects:
+              - name: scaleout
+                description: 0.5s 25% scale out
+                type: scaleout
+                props:
+                  t: "0.5"
+                  offset: "[25, 25]"
+          - name: out_one_second_25_percent
+            description: 1s 25%
+            effects:
+              - name: scaleout
+                description: 1s 25% scale out
+                type: scaleout
+                props:
+                  t: "1.0"
+                  offset: "[25, 25]"
+
+  - name: quick_rotate
+    description: Quick Rotate
+    groups:
+      - name: rotateins_cw
+        description: Rotate In CW
+        buttons:
+          - name: in_half_second_45deg_cw
+            description: 0.5s 45deg
+            effects:
+              - name: rotatein
+                description: 0.5s 45deg clockwise rotate in
+                type: rotatein
+                props:
+                  t: "0.5"
+                  r: "-45"
+          - name: in_one_second_45deg_cw
+            description: 1s 45deg
+            effects:
+              - name: rotatein
+                description: 1s 45deg clockwise rotate in
+                type: rotatein
+                props:
+                  t: "1.0"
+                  r: "-45"
+          - name: in_half_second_90deg_cw
+            description: 0.5s 90deg
+            effects:
+              - name: rotatein
+                description: 0.5s 90deg clockwise rotate in
+                type: rotatein
+                props:
+                  t: "0.5"
+                  r: "-90"
+          - name: in_one_second_90deg_cw
+            description: 1s 90deg
+            effects:
+              - name: rotatein
+                description: 1s 90deg clockwise rotate in
+                type: rotatein
+                props:
+                  t: "1.0"
+                  r: "-90"
+      - name: rotateins_ccw
+        description: Rotate In CCW
+        buttons:
+          - name: in_half_second_45deg_ccw
+            description: 0.5s 45deg
+            effects:
+              - name: rotatein
+                description: 0.5s 45deg counterclockwise rotate in
+                type: rotatein
+                props:
+                  t: "0.5"
+                  r: "45"
+          - name: in_one_second_45deg_ccw
+            description: 1s 45deg
+            effects:
+              - name: rotatein
+                description: 1s 45deg counterclockwise rotate in
+                type: rotatein
+                props:
+                  t: "1.0"
+                  r: "45"
+          - name: in_half_second_90deg_ccw
+            description: 0.5s 90deg
+            effects:
+              - name: rotatein
+                description: 0.5s 90deg counterclockwise rotate in
+                type: rotatein
+                props:
+                  t: "0.5"
+                  r: "90"
+          - name: in_one_second_90deg_ccw
+            description: 1s 90deg
+            effects:
+              - name: rotatein
+                description: 1s 90deg counterclockwise rotate in
+                type: rotatein
+                props:
+                  t: "1.0"
+                  r: "90"
+      - name: rotateouts_cw
+        description: Rotate Out CW
+        buttons:
+          - name: out_half_second_45deg_cw
+            description: 0.5s 45deg
+            effects:
+              - name: rotateout
+                description: 0.5s 45deg clockwise rotate out
+                type: rotateout
+                props:
+                  t: "0.5"
+                  r: "-45"
+          - name: out_one_second_45deg_cw
+            description: 1s 45deg
+            effects:
+              - name: rotateout
+                description: 1s 45deg clockwise rotate out
+                type: rotateout
+                props:
+                  t: "1.0"
+                  r: "-45"
+          - name: out_half_second_90deg_cw
+            description: 0.5s 90deg
+            effects:
+              - name: rotateout
+                description: 0.5s 90deg clockwise rotate out
+                type: rotateout
+                props:
+                  t: "0.5"
+                  r: "-90"
+          - name: out_one_second_90deg_cw
+            description: 1s 90deg
+            effects:
+              - name: rotateout
+                description: 1s 90deg clockwise rotate out
+                type: rotateout
+                props:
+                  t: "1.0"
+                  r: "-90"
+      - name: rotateouts_ccw
+        description: Rotate Out CCW
+        buttons:
+          - name: out_half_second_45deg_ccw
+            description: 0.5s 45deg
+            effects:
+              - name: rotateout
+                description: 0.5s 45deg counterclockwise rotate out
+                type: rotateout
+                props:
+                  t: "0.5"
+                  r: "45"
+          - name: out_one_second_45deg_ccw
+            description: 1s 45deg
+            effects:
+              - name: rotateout
+                description: 1s 45deg counterclockwise rotate out
+                type: rotateout
+                props:
+                  t: "1.0"
+                  r: "45"
+          - name: out_half_second_90deg_ccw
+            description: 0.5s 90deg
+            effects:
+              - name: rotateout
+                description: 0.5s 90deg counterclockwise rotate out
+                type: rotateout
+                props:
+                  t: "0.5"
+                  r: "90"
+          - name: out_one_second_90deg_ccw
+            description: 1s 90deg
+            effects:
+              - name: rotateout
+                description: 1s 90deg counterclockwise rotate out
+                type: rotateout
+                props:
+                  t: "1.0"
+                  r: "90"
+
+  - name: quick_movein
+    description: Quick Move In
+    groups:
+      - name: left
+        description: Left
+        buttons:
+          - name: left_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: movein
+                description: 0.5s 100px left move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[-100, 0]"
+          - name: left_one_second_100
+            description: 1s 100px
+            effects:
+              - name: movein
+                description: 1s 100px left move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[-100, 0]"
+          - name: left_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: movein
+                description: 0.5s 250px left move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[-250, 0]"
+          - name: left_one_second_250
+            description: 1s 250px
+            effects:
+              - name: movein
+                description: 1s 250px left move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[-250, 0]"
+      - name: right
+        description: Right
+        buttons:
+          - name: right_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: movein
+                description: 0.5s 100px right move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[100, 0]"
+          - name: right_one_second_100
+            description: 1s 100px
+            effects:
+              - name: movein
+                description: 1s 100px right move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[100, 0]"
+          - name: right_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: movein
+                description: 0.5s 250px right move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[250, 0]"
+          - name: right_one_second_250
+            description: 1s 250px
+            effects:
+              - name: movein
+                description: 1s 250px right move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[250, 0]"
+      - name: up
+        description: Up
+        buttons:
+          - name: up_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: movein
+                description: 0.5s 100px up move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[0, 100]"
+          - name: up_one_second_100
+            description: 1s 100px
+            effects:
+              - name: movein
+                description: 1s 100px up move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[0, 100]"
+          - name: up_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: movein
+                description: 0.5s 250px up move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[0, 250]"
+          - name: up_one_second_250
+            description: 1s 250px
+            effects:
+              - name: movein
+                description: 1s 250px up move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[0, 250]"
+      - name: down
+        description: Down
+        buttons:
+          - name: down_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: movein
+                description: 0.5s 100px down move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[0, -100]"
+          - name: down_one_second_100
+            description: 1s 100px
+            effects:
+              - name: movein
+                description: 1s 100px down move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[0, -100]"
+          - name: down_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: movein
+                description: 0.5s 250px down move in
+                type: movein
+                props:
+                  t: "0.5"
+                  offset: "[0, -250]"
+          - name: down_one_second_250
+            description: 1s 250px
+            effects:
+              - name: movein
+                description: 1s 250px down move in
+                type: movein
+                props:
+                  t: "1.0"
+                  offset: "[0, -250]"
+
+  - name: quick_moveout
+    description: Quick Move Out
+    groups:
+      - name: left
+        description: Left
+        buttons:
+          - name: left_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: moveout
+                description: 0.5s 100px left move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[-100, 0]"
+          - name: left_one_second_100
+            description: 1s 100px
+            effects:
+              - name: moveout
+                description: 1s 100px left move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[-100, 0]"
+          - name: left_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: moveout
+                description: 0.5s 250px left move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[-250, 0]"
+          - name: left_one_second_250
+            description: 1s 250px
+            effects:
+              - name: moveout
+                description: 1s 250px left move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[-250, 0]"
+      - name: right
+        description: Right
+        buttons:
+          - name: right_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: moveout
+                description: 0.5s 100px right move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[100, 0]"
+          - name: right_one_second_100
+            description: 1s 100px
+            effects:
+              - name: moveout
+                description: 1s 100px right move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[100, 0]"
+          - name: right_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: moveout
+                description: 0.5s 250px right move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[250, 0]"
+          - name: right_one_second_250
+            description: 1s 250px
+            effects:
+              - name: moveout
+                description: 1s 250px right move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[250, 0]"
+      - name: up
+        description: Up
+        buttons:
+          - name: up_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: moveout
+                description: 0.5s 100px up move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[0, 100]"
+          - name: up_one_second_100
+            description: 1s 100px
+            effects:
+              - name: moveout
+                description: 1s 100px up move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[0, 100]"
+          - name: up_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: moveout
+                description: 0.5s 250px up move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[0, 250]"
+          - name: up_one_second_250
+            description: 1s 250px
+            effects:
+              - name: moveout
+                description: 1s 250px up move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[0, 250]"
+      - name: down
+        description: Down
+        buttons:
+          - name: down_half_second_100
+            description: 0.5s 100px
+            effects:
+              - name: moveout
+                description: 0.5s 100px down move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[0, -100]"
+          - name: down_one_second_100
+            description: 1s 100px
+            effects:
+              - name: moveout
+                description: 1s 100px down move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[0, -100]"
+          - name: down_half_second_250
+            description: 0.5s 250px
+            effects:
+              - name: moveout
+                description: 0.5s 250px down move out
+                type: moveout
+                props:
+                  t: "0.5"
+                  offset: "[0, -250]"
+          - name: down_one_second_250
+            description: 1s 250px
+            effects:
+              - name: moveout
+                description: 1s 250px down move out
+                type: moveout
+                props:
+                  t: "1.0"
+                  offset: "[0, -250]"
+
+  - name: quick_pan
+    description: Quick Pan
+    groups:
+      - name: pan_left
+        description: Pan Left
+        buttons:
+          - name: pan_left_100
+            description: "100"
+            effects:
+              - name: pan
+                description: Left pan 100px
+                type: pan
+                props:
+                  offset: "[100, 0]"
+          - name: pan_left_250
+            description: "250"
+            effects:
+              - name: pan
+                description: Left pan 250px
+                type: pan
+                props:
+                  offset: "[250, 0]"
+          - name: pan_left_500
+            description: "500"
+            effects:
+              - name: pan
+                description: Left pan 500px
+                type: pan
+                props:
+                  offset: "[500, 0]"
+      - name: pan_right
+        description: Pan Right
+        buttons:
+          - name: pan_right_100
+            description: "100"
+            effects:
+              - name: pan
+                description: Right pan 100px
+                type: pan
+                props:
+                  offset: "[-100, 0]"
+          - name: pan_right_250
+            description: "250"
+            effects:
+              - name: pan
+                description: Right pan 250px
+                type: pan
+                props:
+                  offset: "[-250, 0]"
+          - name: pan_right_500
+            description: "500"
+            effects:
+              - name: pan
+                description: Right pan 500px
+                type: pan
+                props:
+                  offset: "[-500, 0]"
+      - name: pan_up
+        description: Pan Up
+        buttons:
+          - name: pan_up_100
+            description: "100"
+            effects:
+              - name: pan
+                description: Up pan 100px
+                type: pan
+                props:
+                  offset: "[0, 100]"
+          - name: pan_up_250
+            description: "250"
+            effects:
+              - name: pan
+                description: Up pan 250px
+                type: pan
+                props:
+                  offset: "[0, 250]"
+          - name: pan_up_500
+            description: "500"
+            effects:
+              - name: pan
+                description: Up pan 500px
+                type: pan
+                props:
+                  offset: "[0, 500]"
+      - name: pan_down
+        description: Pan Down
+        buttons:
+          - name: pan_down_100
+            description: "100"
+            effects:
+              - name: pan
+                description: Down pan 100px
+                type: pan
+                props:
+                  offset: "[0, -100]"
+          - name: pan_down_250
+            description: "250"
+            effects:
+              - name: pan
+                description: Down pan 250px
+                type: pan
+                props:
+                  offset: "[0, -250]"
+          - name: pan_down_500
+            description: "500"
+            effects:
+              - name: pan
+                description: Down pan 500px
+                type: pan
+                props:
+                  offset: "[0, -500]"
+
+  - name: quick_walks
+    description: Quick Walks
+    groups:
+      - name: slight_walks
+        description: Slight Walks
+        buttons:
+          - name: slight_walk_1s
+            description: 1s
+            effects:
+              - name: walk
+                description: 1s slight walk
+                type: walk
+                props:
+                  t: "1.0"
+                  n: "10"
+                  a: "30"
+          - name: slight_walk_2s
+            description: 2s
+            effects:
+              - name: walk
+                description: 2s slight walk
+                type: walk
+                props:
+                  t: "2.0"
+                  n: "10"
+                  a: "30"
+          - name: slight_walk_4s
+            description: 4s
+            effects:
+              - name: walk
+                description: 4s slight walk
+                type: walk
+                props:
+                  t: "4.0"
+                  n: "10"
+                  a: "30"
+      - name: heavy_walks
+        description: Heavy Walks
+        buttons:
+          - name: heavy_walk_1s
+            description: 1s
+            effects:
+              - name: walk
+                description: 1s heavy walk
+                type: walk
+                props:
+                  t: "1.0"
+                  n: "10"
+                  a: "60"
+          - name: heavy_walk_2s
+            description: 2s
+            effects:
+              - name: walk
+                description: 2s heavy walk
+                type: walk
+                props:
+                  t: "2.0"
+                  n: "10"
+                  a: "60"
+          - name: heavy_walk_4s
+            description: 4s
+            effects:
+              - name: walk
+                description: 4s heavy walk
+                type: walk
+                props:
+                  t: "4.0"
+                  n: "10"
+                  a: "60"
+
+  - name: quick_infzooms
+    description: Quick Infinite Zooms
+    groups:
+      - name: zoom_ins
+        description: Zoom In
+        buttons:
+          - name: zoom_in_10
+            description: "10%"
+            effects:
+              - name: infzoom
+                description: Zoom In 10px
+                type: infzoom
+                props:
+                  offset: "[10, 10]"
+          - name: zoom_in_20
+            description: "20%"
+            effects:
+              - name: infzoom
+                description: Zoom In 20px
+                type: infzoom
+                props:
+                  offset: "[20, 20]"
+          - name: zoom_in_50
+            description: "50%"
+            effects:
+              - name: infzoom
+                description: Zoom In 50px
+                type: infzoom
+                props:
+                  offset: "[50, 50]"
+      - name: zoom_outs
+        description: Zoom Out
+        buttons:
+          - name: zoom_out_10
+            description: "10%"
+            effects:
+              - name: infzoom
+                description: Zoom Out 10px
+                type: infzoom
+                props:
+                  offset: "[-10, -10]"
+          - name: zoom_out_20
+            description: "20%"
+            effects:
+              - name: infzoom
+                description: Zoom Out 20px
+                type: infzoom
+                props:
+                  offset: "[-20, -20]"
+          - name: zoom_out_50
+            description: "50%"
+            effects:
+              - name: infzoom
+                description: Zoom Out 50px
+                type: infzoom
+                props:
+                  offset: "[-50, -50]"
+
+  - name: quick_spins
+    description: Quick Spins
+    groups:
+      - name: cw
+        description: Clockwise
+        buttons:
+          - name: cw_spin_360
+            description: 360°
+            effects:
+              - name: spin
+                description: Spin 360° clockwise
+                type: spin
+                props:
+                  r: "360"
+          - name: cw_spin_720
+            description: 720°
+            effects:
+              - name: spin
+                description: Spin 720° clockwise
+                type: spin
+                props:
+                  r: "720"
+          - name: cw_spin_1080
+            description: 1080°
+            effects:
+              - name: spin
+                description: Spin 1080° clockwise
+                type: spin
+                props:
+                  r: "1080"
+      - name: ccw
+        description: Counterclockwise
+        buttons:
+          - name: ccw_spin_360
+            description: 360°
+            effects:
+              - name: spin
+                description: Spin 360° counterclockwise
+                type: spin
+                props:
+                  r: "-360"
+          - name: ccw_spin_720
+            description: 720°
+            effects:
+              - name: spin
+                description: Spin 720° counterclockwise
+                type: spin
+                props:
+                  r: "-720"
+          - name: ccw_spin_1080
+            description: 1080°
+            effects:
+              - name: spin
+                description: Spin 1080° counterclockwise
+                type: spin
+                props:
+                  r: "-1080"
+
+  - name: quick_staircases
+    description: Quick Staircases
+    groups:
+      - name: forward
+        description: Forward staircases
+        buttons:
+          - name: fw_staircase_0_25
+            description: 0.25s
+            effects:
+              - name: staircase
+                description: 0.25s staircase
+                type: staircase
+                props:
+                  sep: "0.25"
+          - name: fw_staircase_0_5
+            description: 0.5s
+            effects:
+              - name: staircase
+                description: 0.5s staircase
+                type: staircase
+                props:
+                  sep: "0.5"
+          - name: fw_staircase_1
+            description: 1s
+            effects:
+              - name: staircase
+                description: 1s staircase
+                type: staircase
+                props:
+                  sep: "1.0"
+          - name: fw_staircase_4
+            description: 4s
+            effects:
+              - name: staircase
+                description: 4s staircase
+                type: staircase
+                props:
+                  sep: "4.0"

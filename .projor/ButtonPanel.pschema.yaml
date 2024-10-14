@@ -1,0 +1,14 @@
+id: ButtonPanel
+name: Button Panel
+description: A generated panel containing only buttons
+fields:
+  - name: buttons
+    type: attachment
+    multiple: true
+    references: ButtonPanelButton
+    description: The buttons to display on the panel
+  - name: groups
+    type: attachment
+    multiple: true
+    references: ButtonPanelGroup
+    description: The groups to display on the panel

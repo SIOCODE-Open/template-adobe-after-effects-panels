@@ -1,0 +1,37 @@
+function on{{pascalCase button.name}}() {
+    // Helpers local to the effect
+    function _alert(args) {
+        alert("{{capitalCase parentName}} - {{capitalCase button.name}}: " + args);
+    }
+
+    // Get composition
+    var comp = app.project.activeItem;
+
+    if (!comp || !(comp instanceof CompItem)) {
+        _alert("Error | please select a composition first.");
+        return;
+    }
+
+    // Run effect in undo group
+    app.beginUndoGroup("{{capitalCase parentName}} - {{capitalCase button.name}}");
+
+    {{#each button.effects}}
+    // Effect '{{capitalCase name}}'
+    // {{description}}
+    function fx{{pascalCase name}}() {
+        const props = {
+            {{#each props}}
+            {{camelCase @key}}: {{{this}}},
+            {{/each}}
+        };
+        {{> (append "fx-" type) effect=this button=../button parentName=../parentName }}
+    }
+    // End of effect '{{capitalCase name}}'
+    // Call effect
+    fx{{pascalCase name}}();
+    {{/each}}
+
+    _alert("Completed.");
+
+    app.endUndoGroup();
+}

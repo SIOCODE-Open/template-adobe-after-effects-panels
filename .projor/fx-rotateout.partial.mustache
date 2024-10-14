@@ -1,0 +1,37 @@
+// Rotate Out effect
+// Props:
+// - t: duration in seconds (float)
+// - r: rotation in degrees (float)
+// Creates two keyframes in all selected layers.
+// The first keyframe at the outPoint - t, with the rotation set to current rotation
+// The second keyframe at the outPoint, with the rotation set to current rotation + r
+
+// Check props
+if (!props.t) {
+    _alert("Error | t is not defined in props, you must define t.");
+    return;
+}
+
+if (!props.r) {
+    _alert("Error | r is not defined in props, you must define r.");
+    return;
+}
+
+// Get selected layers
+var selectedLayers = comp.selectedLayers;
+
+if (!selectedLayers || selectedLayers.length === 0) {
+    _alert("Error | please select at least one layer.");
+    return;
+}
+
+// For each selected layer
+for (var i = 0; i < selectedLayers.length; i++) {
+    var layer = selectedLayers[i];
+
+    var currentRotation = layer.transform.rotation.value;
+
+    // Create keyframes
+    var key1 = layer.transform.rotation.setValueAtTime(layer.outPoint - props.t, currentRotation);
+    var key2 = layer.transform.rotation.setValueAtTime(layer.outPoint, currentRotation + props.r);
+}

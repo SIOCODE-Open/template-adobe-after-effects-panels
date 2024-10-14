@@ -1,0 +1,9 @@
+id: ButtonPanelGroup
+name: Button Panel Group
+description: A group on a button panel
+fields:
+  - name: buttons
+    type: attachment
+    multiple: true
+    references: ButtonPanelButton
+    description: The buttons to display in the group

@@ -1,0 +1,29 @@
+// Fade In effect
+// Props:
+// - t: duration in seconds (float)
+// Creates two keyframes in all selected layers.
+// The first keyframe at the inPoint, with the opacity set to 0.
+// The second keyframe at the inPoint + t, with the opacity set to 100.
+
+// Check props
+if (!props.t) {
+    _alert("Error | t is not defined in props, you must define t.");
+    return;
+}
+
+// Get selected layers
+var selectedLayers = comp.selectedLayers;
+
+if (!selectedLayers || selectedLayers.length === 0) {
+    _alert("Error | please select at least one layer.");
+    return;
+}
+
+// For each selected layer
+for (var i = 0; i < selectedLayers.length; i++) {
+    var layer = selectedLayers[i];
+
+    // Create keyframes
+    var key1 = layer.transform.opacity.setValueAtTime(layer.inPoint, 0);
+    var key2 = layer.transform.opacity.setValueAtTime(layer.inPoint + props.t, 100);
+}
